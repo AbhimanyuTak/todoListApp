@@ -1,0 +1,20 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "To keep track of tasks",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "abhimanyu",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-local-storage": "^0.6.0",
+    "angular-ui-router": "^1.0.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0"
+  }
+}

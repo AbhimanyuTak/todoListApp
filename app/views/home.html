@@ -1,0 +1,47 @@
+<div ng-controller="mainController">
+	<div class="container">
+
+		<div class="main-heading">my todo app.</div>
+		
+		<div class="row">
+			<div class="col-xs-12 list-card clickable" ng-click="newList()">
+				<span class="fa fa-plus-square" aria-hidden="true"></span>
+				<span> Add a new List </span>
+			</div>
+
+			<div class="col-xs-12 list-card clickable" ng-repeat="list in allLists" ng-click="goToTask(list.id)">
+				<span class="fa fa-th-list" aria-hidden="true"></span>
+				<span>{{list.name}}</span>
+				<span class="fa fa-times-circle-o floatr" aria-hidden="true" ng-click="deleteList(list.id)"></span>
+			</div>
+		</div>
+
+
+		<!-- <div ng-repeat="task in allTasks">
+			<p>{{task.name}}</p>
+		</div> -->
+	</div>
+
+	<!-- Modal -->
+	<div id="newList" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Name your List</h4>
+	      </div>
+	      <div class="modal-body">
+	        <input type="" name="" ng-model="newListName">
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="addList()">Done</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+</div>
+
+
