@@ -12,7 +12,7 @@
 			<div class="col-xs-12 list-card clickable" ng-repeat="task in allTasks">
 				<span class="fa fa-th-list" aria-hidden="true"></span>
 				<span>{{task.name}}</span>
-				<span class="fa fa-times-circle-o floatr" aria-hidden="true" ng-click="deleteList(task.id)"></span>
+				<span class="fa fa-times-circle-o floatr" aria-hidden="true" ng-click="deleteTask(thisList.id, task.id)"></span>
 			</div>
 		</div>
 
@@ -33,7 +33,7 @@
 	        <h4 class="modal-title">Name your Task</h4>
 	      </div>
 	      <div class="modal-body">
-	        <input type="" name="" ng-model="newListName">
+	        <input type="" name="" ng-model="newTaskName">
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="addTask()">Done</button>
