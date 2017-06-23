@@ -1,0 +1,47 @@
+<div ng-controller="taskController">
+	<div class="container">
+
+		<div class="main-heading">{{thisList.name}}</div>
+		
+		<div class="row">
+			<div class="col-xs-12 list-card clickable" ng-click="newTask()">
+				<span class="fa fa-plus-square" aria-hidden="true"></span>
+				<span> Add a new Task </span>
+			</div>
+
+			<div class="col-xs-12 list-card clickable" ng-repeat="task in allTasks">
+				<span class="fa fa-th-list" aria-hidden="true"></span>
+				<span>{{task.name}}</span>
+				<span class="fa fa-times-circle-o floatr" aria-hidden="true" ng-click="deleteList(task.id)"></span>
+			</div>
+		</div>
+
+
+		<!-- <div ng-repeat="task in allTasks">
+			<p>{{task.name}}</p>
+		</div> -->
+	</div>
+
+	<!-- Modal -->
+	<div id="newTask" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Name your Task</h4>
+	      </div>
+	      <div class="modal-body">
+	        <input type="" name="" ng-model="newListName">
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="addTask()">Done</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+</div>
+
+

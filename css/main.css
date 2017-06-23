@@ -1,0 +1,24 @@
+div {
+	/*background: grey;*/
+}
+
+.floatr {
+	float: right;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.main-heading {
+	font-size: 30px;
+	padding: 20px;
+	text-align: center;
+}
+
+.list-card {
+	padding: 10px;
+	background-color: grey;
+	margin: 5px 0;
+	border-radius: 4px;
+}
