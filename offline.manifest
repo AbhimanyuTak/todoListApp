@@ -1,0 +1,17 @@
+CACHE MANIFEST
+css/bundle.css
+css/main.css
+js/controllers/main_controller.js
+js/controllers/task_controller.js
+js/libs/bundle.js
+js/services/task_factory.js
+js/app.js
+views/home.html
+views/tasks.html
+index.html
+fonts/fontawesome-webfont.eot
+fonts/fontawesome-webfont.svg
+fonts/fontawesome-webfont.ttf
+fonts/fontawesome-webfont.woff
+fonts/fontawesome-webfont.woff2
+fonts/FontAwesome.otf
