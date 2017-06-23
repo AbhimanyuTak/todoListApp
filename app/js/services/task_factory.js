@@ -55,29 +55,27 @@ myApp.factory('taskFactory', ['localStorageService', function(localStorageServic
 	List.prototype.addLocalTasks = function(idn, taskObj) {
 		var allLists = this.lists
 		for(var i in allLists) {
-			if(allLists[i].id === idn) {
+			if(allLists[i].id == idn) {
 				allLists[i].tasks.push(taskObj)
 			}
 		}
 
 		localStorageService.set('lists', allLists)
 		this.lists = allLists
-		return []
 	}
 
 	List.prototype.deleteLocalTask = function(id, taskID) {
-		var allLists = localStorageService.get('lists')
-
+		var allLists = this.lists
 		for(var i in allLists) {
-			if(allLists[i].id === id) {
-				for(var j in allLists.tasks) {
-					if(allLists[i].tasks[j].id === taskID) {
+			if(allLists[i].id == id) {
+				for(var j in allLists[i].tasks) {
+					if(allLists[i].tasks[j].id == taskID) {
 						allLists[i].tasks.splice(j, 1);
 						break;
 					}
 				}
 				break;
-			}
+			}				
 		}
 
 		localStorageService.set('lists', allLists)

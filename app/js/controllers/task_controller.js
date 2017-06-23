@@ -6,19 +6,18 @@ myApp.controller('taskController', ['$scope', 'localStorageService', 'taskFactor
 	var listID = $stateParams.id
 	console.log(listID)
 	var taskList = new taskFactory()
-
 	$scope.allLists = taskList.lists
 
-	console.log($scope.allLists)
+	function updateTasks() {
+		$scope.thisList = $scope.allLists.filter(function(ele) {
+			if(ele.id == listID)
+				return ele
+		})[0]
 
-	$scope.thisList = $scope.allLists.filter(function(ele) {
-		console.log(ele)
-		if(ele.id == listID)
-			return ele
-	})[0]
+		$scope.allTasks = $scope.thisList.tasks
+	}
 
-
-	$scope.allTasks = $scope.thisList.tasks
+	updateTasks()
 
 	$scope.newTask = function() {
 		$("#newTask").modal()
@@ -26,8 +25,9 @@ myApp.controller('taskController', ['$scope', 'localStorageService', 'taskFactor
 
 	$scope.addTask = function() {
 		$("#newTask").modal()
-		var name = $scope.newListName
-		var newID = ($scope.allLists.length === 0) ? 1 : $scope.allLists.length + 1
+		console.log("new task")
+		var name = $scope.newTaskName
+		var newID = ($scope.thisList.tasks.length === 0) ? 1 : $scope.thisList.tasks.length + 1
 
 		var newTaskItem = {
 			id: newID,
@@ -37,13 +37,14 @@ myApp.controller('taskController', ['$scope', 'localStorageService', 'taskFactor
 		}
 
 		taskList.addLocalTasks(listID, newTaskItem)
-		taskList.addToLocalLists(newListItem)
 		$scope.allLists = taskList.lists
+		updateTasks()
 	}
 
-	$scope.deleteList = function(id) {
-		taskList.deleteLocalListItem(id)
+	$scope.deleteTask = function(id, tid) {
+		taskList.deleteLocalTask(id, tid)
 		$scope.allLists = taskList.lists
+		updateTasks()
 	}
 
 	$scope.goToTask = function(id) {

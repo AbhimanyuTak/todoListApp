@@ -12,7 +12,7 @@ myApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'loca
 
   var helloState = {
     name: 'all',
-    url: '/allTasks',
+    url: '/',
     templateUrl: 'views/home.html'
   }
 
