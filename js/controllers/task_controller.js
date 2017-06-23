@@ -33,7 +33,7 @@ myApp.controller('taskController', ['$scope', 'localStorageService', 'taskFactor
 			id: newID,
 			name: name,
 			addedOn: new Date(),
-			status: "Pending"
+			status: false
 		}
 
 		taskList.addLocalTasks(listID, newTaskItem)
@@ -41,14 +41,16 @@ myApp.controller('taskController', ['$scope', 'localStorageService', 'taskFactor
 		updateTasks()
 	}
 
-	$scope.deleteTask = function(id, tid) {
-		taskList.deleteLocalTask(id, tid)
+	$scope.updateTask = function($event, tid, status) {
+		taskList.updateLocalTask(listID, tid, status)
+		updateTasks()
+	}
+
+	$scope.deleteTask = function(tid) {
+		taskList.deleteLocalTask(listID, tid)
 		$scope.allLists = taskList.lists
 		updateTasks()
 	}
 
-	$scope.goToTask = function(id) {
-		console.log(id)
-		$state.go('task', {'id' : id})
-	}
+
 }])

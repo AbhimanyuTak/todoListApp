@@ -64,6 +64,24 @@ myApp.factory('taskFactory', ['localStorageService', function(localStorageServic
 		this.lists = allLists
 	}
 
+	List.prototype.updateLocalTask = function(id, taskID, status) {
+		var allLists = this.lists
+		for(var i in allLists) {
+			if(allLists[i].id == id) {
+				for(var j in allLists[i].tasks) {
+					if(allLists[i].tasks[j].id == taskID) {
+						allLists[i].tasks[j].status = status
+						break;
+					}
+				}
+				break;
+			}				
+		}
+
+		localStorageService.set('lists', allLists)
+		this.lists = allLists
+	}
+
 	List.prototype.deleteLocalTask = function(id, taskID) {
 		var allLists = this.lists
 		for(var i in allLists) {
