@@ -16,6 +16,7 @@ myApp.factory('taskFactory', ['localStorageService', function(localStorageServic
 	List.prototype.addToLocalLists = function(listObj) {
 		if(localStorageService.get('lists') == undefined) {
 			localStorageService.set('lists', [listObj])
+			this.lists = [listObj]
 		}
 		else {
 			var allLists = localStorageService.get('lists')
