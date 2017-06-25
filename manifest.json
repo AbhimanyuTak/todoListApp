@@ -1,0 +1,15 @@
+{
+  "short_name": "toDo",
+  "name": "A simple todo app",
+  "icons": [
+    {
+      "src": "images/icons/todo2.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#efefef",
+  "theme_color": "#efefef"
+}

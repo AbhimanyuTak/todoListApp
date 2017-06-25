@@ -1,28 +1,30 @@
 <div ng-controller="taskController">
 	<div class="container">
 
-		<div class="main-heading">{{thisList.name}}</div>
+		<div class="app-wrapper">
+			<div ui-sref="all" class="floatl">Back</div>
+			<div class="task-heading">{{thisList.name}}</div>
 		
-		<div class="row">
-			<div class="col-xs-12 list-card clickable" ng-click="newTask()">
-				<span class="fa fa-plus-square" aria-hidden="true"></span>
+			<div class="list-card clickable" ng-click="newTask()">
+				<!-- <span class="fa fa-plus-square" aria-hidden="true"></span> -->
+				<span>
+					<img src="images/icons/plus.png" width="15">
+				</span>
 				<span> Add a new Task </span>
 			</div>
 
-			<div class="col-xs-12 list-card clickable" ng-repeat="task in allTasks">
+			<div class="list-card clickable" ng-repeat="task in allTasks">
 				<!-- <span class="fa fa-th-list" aria-hidden="true"></span> -->
 				<span>
 					<input type="checkbox" ng-model="task.status" ng-change="updateTask(task.id, taskStatus)">
 				</span>
 				<span>{{task.name}}</span>
-				<span class="fa fa-times-circle-o floatr" aria-hidden="true" ng-click="deleteTask(task.id)"></span>
+				<!-- <span class="fa fa-times-circle-o floatr" aria-hidden="true" ng-click="deleteTask(task.id)"></span> -->
+				<span>
+					<img class="floatr" src="images/icons/times.png" width="20" ng-click="deleteTask(task.id)">
+				</span>
 			</div>
 		</div>
-
-
-		<!-- <div ng-repeat="task in allTasks">
-			<p>{{task.name}}</p>
-		</div> -->
 	</div>
 
 	<!-- Modal -->
