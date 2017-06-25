@@ -2,6 +2,10 @@ div {
 	/*background: grey;*/
 }
 
+.floatl {
+	float: left;
+}
+
 .floatr {
 	float: right;
 }
@@ -10,15 +14,41 @@ div {
 	cursor: pointer;
 }
 
+.center {
+	text-align: center;
+}
+
+.app-wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 400px;
+	margin: 20px auto;
+}
+
 .main-heading {
 	font-size: 30px;
 	padding: 20px;
 	text-align: center;
 }
 
+.task-heading {
+	width: 80%;
+	font-size: 25px;
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+}
+
 .list-card {
+	width: 80%;
 	padding: 10px;
-	background-color: grey;
-	margin: 5px 0;
+	background-color: #efefef;
+	margin: 5px auto;
 	border-radius: 4px;
+}
+
+@media screen and (max-width: 767px) {
+	.list-card {
+		width: 95%;
+	}
 }

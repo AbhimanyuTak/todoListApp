@@ -21,8 +21,6 @@ myApp.factory('taskFactory', ['localStorageService', function(localStorageServic
 		else {
 			var allLists = localStorageService.get('lists')
 			allLists.push(listObj)
-			console.log(allLists)
-			console.log(listObj)
 			localStorageService.set('lists', allLists)
 			this.lists = allLists
 		}
