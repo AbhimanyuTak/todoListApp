@@ -1,9 +1,9 @@
-A offline first simple ToDo App.
+## An offline first simple ToDo App.
 
 Here are the steps to test to deploy locally
 
-`cd <repo name>`
-`npm install`
-`gulp`
+```cd <repo name>```
+```npm install```
+```gulp```
 
-Default port is 8080
+Open http://localhost:8080 in your browser
